@@ -23,7 +23,7 @@ type Config struct {
 var cfgData Config
 
 func loadConfig() (context.Context, context.CancelFunc, time.Duration) {
-	configPath := "./config.json"
+	configPath := "config.json"
 	var interval, dur *int
 
 	configFile, err := os.Open(configPath)
