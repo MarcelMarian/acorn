@@ -1,0 +1,7 @@
+{
+    "appName": "acorn",
+    "params": {
+        "interval": 60,
+        "duration": -1
+    }
+}
