@@ -22,6 +22,9 @@ type Config struct {
 
 var cfgData Config
 
+const defaultInterval = 60
+const defaultDuration = -1
+
 func loadConfig() (context.Context, context.CancelFunc, time.Duration) {
 	configPath := "config.json"
 	var interval, dur *int
@@ -39,8 +42,8 @@ func loadConfig() (context.Context, context.CancelFunc, time.Duration) {
 		interval = &cfgData.CfgParams.Interval
 		dur = &cfgData.CfgParams.Duration
 	} else {
-		interval = flag.Int("interval", 5, "moving interval [sec]")
-		dur = flag.Int("duration", -1, "moving duration [sec]")
+		interval = flag.Int("interval", defaultInterval, "moving interval [sec]")
+		dur = flag.Int("duration", defaultDuration, "moving duration [sec]")
 		flag.Parse()
 
 	}
